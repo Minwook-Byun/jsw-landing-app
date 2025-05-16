@@ -1,0 +1,92 @@
+/* --- 전체 스타일 --- */
+body {
+    font-family: 'Nanum Gothic', sans-serif; /* 예시 폰트, Google Fonts 등에서 원하는 폰트 import 가능 */
+    line-height: 1.6;
+    color: #333; /* 기본 텍스트 색상 */
+    background-color: #f4f4f9; /* 전체 배경색 */
+}
+
+/* Streamlit 기본 요소 스타일 조정 (필요에 따라) */
+/*
+.stApp {
+    background-color: #your_custom_color;
+}
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1a73e8; /* 제목 색상 (구글 블루 예시) */
+    font-weight: bold;
+}
+
+/* --- 컨테이너 및 섹션 스타일 --- */
+.stContainer { /* Streamlit 컨테이너에 직접 적용은 어려우므로, 내부 요소에 클래스를 부여하거나 HTML로 감싸는 것이 일반적 */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* 섹션별 배경색 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- 커스텀 버튼 스타일 (구글 폼 연결용) --- */
+.custom-button {
+    background-color: #1a73e8; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색상 */
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px; /* 둥근 모서리 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 전환 효과 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.custom-button:hover {
+    background-color: #005cb2; /* 호버 시 버튼 배경색 */
+    transform: translateY(-2px); /* 살짝 위로 이동하는 효과 */
+}
+
+.custom-button:active {
+    transform: translateY(0px); /* 클릭 시 원래 위치로 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* --- 푸터 스타일 --- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #eee;
+}
+
+
+/* --- 반응형 디자인 (모바일) --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.0em; /* 모바일에서 제목 크기 줄이기 */
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .stContainer {
+        padding: 15px;
+    }
+    .custom-button {
+        width: 100%; /* 모바일에서 버튼 너비 전체 차지 */
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    /* 컬럼을 세로로 쌓기 (Streamlit이 기본적으로 처리하지만, 추가 조정이 필요할 수 있음) */
+    /* .stHorizontalBlock > div[data-testid="column"] {
+        flex-basis: 100% !important;
+        max-width: 100% !important;
+    } */
+}
