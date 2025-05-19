@@ -373,7 +373,7 @@ def display_program_flow_section():
     
     st.markdown('<div id="section-program" class="program-flow-section-container"><div class="program-flow-content-wrapper">', unsafe_allow_html=True)
     st.markdown(f'<h2 class="program-flow-main-title">프로그램 진행 내용</h2>', unsafe_allow_html=True)
-    st.markdown(f'<h3 class="program-flow-main-subtitle">✨ 어떤 교육과 활동이 있나요?</h3>', unsafe_allow_html=True)
+    st.markdown(f'<h3 class="program-flow-main-subtitle">✨ 어떤 교육과 프로그램이 있나요?</h3>', unsafe_allow_html=True)
     
     animation_delay_counter = 0
     for group in program_elements:
