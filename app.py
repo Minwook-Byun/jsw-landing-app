@@ -188,7 +188,7 @@ def display_hero_banner():
 # === 섹션 2: "막막했던 투자유치..." (디자인 개선) ===
 def display_post_hero_section():
     program_name = "소링아 3기"
-    base_text_start = "는 사회서비스 분야 기업의 투자 유치 역량을 강화하고, 실질적인 투자 연계 기회를 제공하여 사회서비스 시장의 지속 가능한 성장을 지원합니다."
+    base_text_start = "는 사회서비스 분야 기업의 투자 유치 역량을 강화하고, <br> 실질적인 투자 연계 기회를 제공하여 사회서비스 시장의 지속 가능한 성장을 지원합니다."
     # TEXT_COLOR_BODY_FOR_P는 이 섹션의 p 태그에만 특별히 사용된 #34495e 값입니다.
     TEXT_COLOR_BODY_FOR_P = "#34495e" 
 
@@ -271,13 +271,13 @@ def display_who_can_apply_section():
         #who-can-apply-section .content-wrapper {{ max-width: 800px; margin: 0 auto; }}
         #who-can-apply-section .section-main-title-orange {{ font-size: 1.8em; font-weight: 700; color: {KEY_ORANGE_COLOR}; text-align: center; margin-bottom: 10px; }}
         #who-can-apply-section .section-subtitle-emoji {{ font-size: 2.2em; font-weight: 700; color: {TEXT_COLOR_HEADINGS}; text-align: center; margin-bottom: 35px; }}
-        #who-can-apply-section .apply-info-card {{ background-color: {CARD_BACKGROUND_COLOR}; padding: 35px 40px; border-radius: 16px; box-shadow: 0 6px 25px rgba(0,0,0,0.07); text-align: left; }}
-        #who-can-apply-section .apply-info-card p.apply-details {{ font-size: 1.2em; color: {TEXT_COLOR_BODY}; line-height: 1.8; margin-bottom: 0; }}
+        #who-can-apply-section .apply-info-card {{ background-color: {CARD_BACKGROUND_COLOR}; text-align: center; padding: 35px 40px; border-radius: 16px; box-shadow: 0 6px 25px rgba(0,0,0,0.07); text-align: left; }}
+        #who-can-apply-section .apply-info-card p.apply-details {{ font-size: 1.2em; color: {TEXT_COLOR_BODY}; text-align: center; line-height: 1.8; margin-bottom: 0; }}
         @media (max-width: 992px) {{ #who-can-apply-section .section-main-title-orange {{ font-size: 1.7em; }} #who-can-apply-section .section-subtitle-emoji {{ font-size: 2.0em; }} #who-can-apply-section .apply-info-card p.apply-details {{ font-size: 1.15em; }} }}
         @media (max-width: 768px) {{ #who-can-apply-section {{ padding: 60px 20px; }} #who-can-apply-section .section-main-title-orange {{ font-size: 1.6em; }} #who-can-apply-section .section-subtitle-emoji {{ font-size: 1.8em; margin-bottom: 30px; }} #who-can-apply-section .apply-info-card {{ padding: 30px 25px; }} #who-can-apply-section .apply-info-card p.apply-details {{ font-size: 1.05em; }} }}
         @media (max-width: 576px) {{ #who-can-apply-section .section-main-title-orange {{ font-size: 1.5em; }} #who-can-apply-section .section-subtitle-emoji {{ font-size: 1.6em; }} #who-can-apply-section .apply-info-card p.apply-details {{ font-size: 1.0em; }} }}
     </style>
-    <div id="who-can-apply-section"><div class="content-wrapper"><h2 class="section-main-title-orange">지원대상</h2><h3 class="section-subtitle-emoji">🤔 누가 지원할 수 있나요?</h3><div class="apply-info-card"><p class="apply-details">사회서비스 관련 기술‧제품‧서비스 제공 기업으로 복지, 보건·의료, 교육, 고용, 주거, 문화, 환경 등의 분야가 포함되며, 총 13개 사를 선발합니다.</p></div></div></div>"""
+    <div id="who-can-apply-section"><div class="content-wrapper"><h2 class="section-main-title-orange">지원대상</h2><h3 class="section-subtitle-emoji">🤔 누가 지원할 수 있나요?</h3><div class="apply-info-card"><p class="apply-details">사회서비스 관련 기술‧제품‧서비스 제공 기업으로 <br> <strong>복지, 보건·의료, 교육, 고용, 주거, 문화, 환경</strong> 등의 분야가 포함되며, <strong> 총 13개 사 </strong>를 선발합니다.</p></div></div></div>"""
     st.markdown(section_html, unsafe_allow_html=True)
 
 # === 섹션 4: 지원 혜택 ===
@@ -360,14 +360,14 @@ def display_program_flow_section():
     
     program_elements = [
         {"group_title": "📚 기본 교육", "activities": [
-            {"title": "스테이지 1: 법률 및 기본 역량 강화", "items": ["사회서비스란: <span class='placeholder-text'>이후 내용 추가</span>", "인사노무: 채용 및 취업 규칙/표준 근로계약서 기반의 근로계약서 작성 강의 진행", "법률 교육: 투자 핵심 용어, 유형 계약 시 주의사항 등"]},
-            {"title": "스테이지 2: 성장 및 가치 측정", "items": ["AI 기반 임팩트 측정: 정성지표 수집 및 데이터 자동화", "비즈니스 모델에서 임팩트 체계화로의 확장 전략", "임팩트 리포트 구성 실습"]},
-            {"title": "스테이지 3: 투자 유치 및 금융 설계", "items": ["IR 스토리텔링: <span class='placeholder-text'>이후 내용 채울 예정</span>", "투자 생태계 이해: <span class='placeholder-text'>내용</span>", "혼합금융: <span class='placeholder-text'>내용</span>"]}
+            {"title": "스테이지 1: 법률 및 기본 역량 강화", "items": ["사회서비스의 이해: <span class='placeholder-text'>사회 서비스의 의미와 생태계 소개</span>", "인사노무: 채용 및 취업 규칙/표준 근로계약서 기반의 근로계약서 작성 강의 진행", "법률 교육: 투자 핵심 용어, 유형 계약 시 주의사항 등"]},
+            {"title": "스테이지 2: 성장 및 가치 측정", "items": ["AI 기반 임팩트 측정: 사회서비스 기업 대표님으로부터 직접 듣는 정성 지표 수집 및 데이터 자동화 이를 통한 알맞은 파트너십 구축 전략", "AI 인사이트: 글로벌 AI 트렌드와 사회서비스 기업의 향후 AI/DT 전략", "홍보 마케팅: 사회서비스 기업 맞춤형 홍보 및 마케팅 전략"]},
+            {"title": "스테이지 3: 투자 유치 및 금융 설계", "items": ["IR 스토리텔링: <span class='placeholder-text'>스토리 기반의 IR 피치덱 구성과 피칭 전략 강의</span>", "투자 생태계 이해: <span class='placeholder-text'> 국내 AC/VC/PE 등 벤처 투자와 관련된 생태계 전반 강의와 형태에 따른 투자 유치 가이드</span>", "혼합금융: <span class='placeholder-text'>MYSC의 실전적인 사례를 통해 알아보는 TIPS/LIPS/지원금을 통해 자본조달 전략 수립 강의</span>"]}
         ]},
         {"group_title": "🤝 네트워킹 및 성과공유", "activities": [
-            {"title": "소셜링크 아카데미 Kick-off", "items": ["아카데미 시작, 오리엔테이션 및 참여 기업 간 네트워킹 세션"]},
-            {"title": "동반성장 워크숍", "items": ["선배 사회서비스 기업가 초청 강연, 경험 공유 및 그룹 워크숍"]},
-            {"title": "성과공유회 (데모데이)", "items": ["프로그램 참여 기업 최종 성과 발표, 투자자 및 관계자 초청, 네트워킹 기회 제공, 우수팀 시상"]}
+            {"title": "발대식식", "items": ["아카데미 시작, 오리엔테이션 및 참여 기업 간 네트워킹 세션(6월 중)"]},
+            {"title": "동반성장 워크숍", "items": ["선배 사회서비스 기업가 초청 강연, 경험 공유 및 그룹 워크숍(10월 중)"]},
+            {"title": "성과공유회 (데모데이)", "items": ["프로그램 참여 기업 최종 성과 발표, 투자자 및 관계자 초청, 네트워킹 기회 제공, 우수팀 시상(11월 중)"]}
         ]}
     ]
     
@@ -427,8 +427,7 @@ def display_application_method_text():
     <div id="application-method-section"><div class="content-wrapper">
             <h2 class="main-title-orange">접수 방법</h2><h3 class="subtitle-emoji">🤔 어떻게 지원하면 될까요?</h3>
             <div class="info-card">
-                <p><strong>1. 온라인 접수:</strong><br>- 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>- 해당 링크에서 신청 양식을 다운로드 받아 작성 후, 기타 제출 서류와 함께 업로드해 주십시오.</p>
-                <p><strong>2. QR 코드 접수 (포스터 참고):</strong><br>- 모집 공고 포스터에 있는 QR 코드를 스캔하여 접수 페이지로 이동할 수 있습니다.<br><em>(본 웹페이지에서는 QR코드 이미지를 제공하지 않습니다. 포스터를 확인해주세요.)</em><br><small class="submission-note">자세한 제출 서류 목록은 접수 페이지 내 공고문을 확인해주시기 바랍니다.</small></p>
+                <p>- 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>- 해당 링크에서 신청 양식을 다운로드 받아 작성 후, 기타 제출 서류와 함께 업로드해 주십시오.</p>
             </div></div></div>"""
     st.markdown(content_html, unsafe_allow_html=True)
 
@@ -460,7 +459,7 @@ def display_contact_info():
             <div class="contact-card">
                 <h3>프로그램 운영 사무국 (MYSC)</h3>
                 <p><span class="icon">✉️</span><strong>이메일:</strong> <a href="mailto:{contact_email}">{contact_email}</a></p>
-                <p><span class="icon">📞</span><strong>연락처:</strong> <code>[MYSC 담당자 연락처 입력 필요]</code> (예: 02-XXX-XXXX)</p>
+                <p><span class="icon">📞</span><strong>연락처:</strong> 02-532-1110 </p>
             </div></div></div>"""
     st.markdown(content_html, unsafe_allow_html=True)
 
@@ -500,4 +499,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
