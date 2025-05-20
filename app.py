@@ -365,7 +365,7 @@ def display_program_flow_section():
             {"title": "스테이지 3: 투자 유치 및 금융 설계", "items": ["IR 스토리텔링: <span class='placeholder-text'>스토리 기반의 IR 피치덱 구성과 피칭 전략 강의</span>", "투자 생태계 이해: <span class='placeholder-text'> 국내 AC/VC/PE 등 벤처 투자와 관련된 생태계 전반 강의와 형태에 따른 투자 유치 가이드</span>", "혼합금융: <span class='placeholder-text'>MYSC의 실전적인 사례를 통해 알아보는 TIPS/LIPS/지원금을 통해 자본조달 전략 수립 강의</span>"]}
         ]},
         {"group_title": "🤝 네트워킹 및 성과공유", "activities": [
-            {"title": "발대식식", "items": ["아카데미 시작, 오리엔테이션 및 참여 기업 간 네트워킹 세션(6월 중)"]},
+            {"title": "발대식", "items": ["아카데미 시작, 오리엔테이션 및 참여 기업 간 네트워킹 세션(6월 중)"]},
             {"title": "동반성장 워크숍", "items": ["선배 사회서비스 기업가 초청 강연, 경험 공유 및 그룹 워크숍(10월 중)"]},
             {"title": "성과공유회 (데모데이)", "items": ["프로그램 참여 기업 최종 성과 발표, 투자자 및 관계자 초청, 네트워킹 기회 제공, 우수팀 시상(11월 중)"]}
         ]}
