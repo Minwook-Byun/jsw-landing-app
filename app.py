@@ -301,7 +301,7 @@ def display_benefits_section():
         @media (max-width: 768px) {{ #benefits-section {{ padding: 60px 20px; }} #benefits-section .benefits-main-title-orange {{ font-size: 1.6em; }} #benefits-section .benefits-subtitle {{ font-size: 1.8em; margin-bottom: 30px; }} #benefits-section .benefits-card {{ padding: 30px 25px; }} #benefits-section .benefits-card li {{ font-size: 1.05em; margin-bottom: 12px; }} }}
         @media (max-width: 576px) {{ #benefits-section .benefits-main-title-orange {{ font-size: 1.5em; }} #benefits-section .benefits-subtitle {{ font-size: 1.6em; }} #benefits-section .benefits-card li {{ font-size: 1.0em; }} }}
     </style>
-    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li>소셜링크아카데미 교육 참여</li><li>우수기업에게 MYSC 직접 투자 2억원 이상 진행</li><li>TIPS/LIPS 추천 검토</li></ul></div></div></div>"""
+    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li>소셜링크아카데미 교육 참여</li><li>전문 컨설턴트의 1:1 심화 교육</li><li>팀 맞춤형 혼합금융 컨설팅/연계</li></ul></div></div></div>"""
     st.markdown(section_html, unsafe_allow_html=True)
 
 # === 섹션 5: 프로그램 진행 내용 ===
