@@ -442,7 +442,7 @@ def display_program_diagram():
     <div class="diagram-container">
         <div class="top-boxes-row">
             <div class="program-box" style="border-top: 5px solid {gradient_start_color};">
-                <h3>전문 컨설턴트의<br>1:1 심화 교육</h3>
+                <h3>전문 컨설턴트의 팀파트너 매칭을 통한 1:1 심화 교육을 통한 성장 밀착 지원</h3>
                 <ul>
                     <li>공공/민간분야 전문가의 맞춤형 멘토링</li><li>기업별 진단을 통한 소셜/비즈니스 KP 설정</li><li>비즈니스 로드맵 설정</li>
                 </ul>
@@ -511,7 +511,7 @@ def display_benefits_section():
         @media (max-width: 768px) {{ #benefits-section {{ padding: 60px 20px; }} #benefits-section .benefits-main-title-orange {{ font-size: 1.6em; }} #benefits-section .benefits-subtitle {{ font-size: 1.8em; margin-bottom: 30px; }} #benefits-section .benefits-card {{ padding: 30px 25px; }} #benefits-section .benefits-card li {{ font-size: 1.05em; margin-bottom: 12px; }} }}
         @media (max-width: 576px) {{ #benefits-section .benefits-main-title-orange {{ font-size: 1.5em; }} #benefits-section .benefits-subtitle {{ font-size: 1.6em; }} #benefits-section .benefits-card li {{ font-size: 1.0em; }} }}
     </style>
-    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li>MYSC 2억 직접투자 검토 </li><li>전문 컨설턴트의 1:1 심화 교육</li><li>소셜링크아카데미 교육 참여</li></ul></div></div></div>"""
+    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li> 우수 기업 MYSC 2억 직접투자 및 TIPS/LIPS 검토 </li><li> 팀 파트너의 1:1 심화 교육 진행을 통한 밀착 성장 지원</li><li>소셜링크아카데미 참여를 통한 사회서비스 기업과의 네트워크 형성</li></ul></div></div></div>"""
     st.markdown(section_html, unsafe_allow_html=True)
 
 # === 섹션 5: 프로그램 진행 내용 ===
