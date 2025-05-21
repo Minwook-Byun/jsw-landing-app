@@ -451,7 +451,7 @@ def display_program_diagram():
             <div class="program-box" style="border-top: 5px solid {KEY_ORANGE_COLOR};">
                 <h3>소셜 링크 아카데미<br>교육 참여</h3>
                 <ul>
-                    <li>사회 서비스 기업과의 네트워크 확장</li><li>사회 서비스 이해 증진</li><li>혼합금융 및 투자 생태계 교육</li>
+                    <li>사회 서비스 기업과의 네트워크 확장</li><li>사회서비스 유관 펀드를 보유한 VC와의 Closed IR 진행</li><li>혼합금융 및 투자 생태계 교육</li>
                 </ul>
                 <div class="arrow-connector arrow-2 arrow-head-style"></div>
             </div>
