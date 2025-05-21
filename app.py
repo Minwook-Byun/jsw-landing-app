@@ -458,7 +458,7 @@ def display_program_diagram():
             <div class="program-box" style="border-top: 5px solid {gradient_end_color};">
                 <h3>팀 맞춤형 혼합금융<br>컨설팅/연계</h3>
                 <ul>
-                    <li>TIPS/LIPS 교육</li><li>맞춤형 지원사업 연계</li><li>MYSC 네트워크를 통한 오픈이노베이션 연계</li>
+                    <li>우수 기업 2억 직접 투자 검토</li> <li>TIPS/LIPS 교육</li><li>맞춤형 지원사업 연계</li><li>MYSC 네트워크를 통한 오픈이노베이션 연계</li>
                 </ul>
                 <div class="arrow-connector arrow-3 arrow-head-style"></div>
             </div>
