@@ -582,7 +582,7 @@ def display_program_flow_section():
         {"group_title": "🤝 네트워킹 및 성과공유", "activities": [
             {"title": "발대식", "items": [" 사회서비스 전문가 강의, 기업 자가진단 작성 및 활용방법, 사회 서비스 분야 선배 기업가 강연, 참여 기업 간 네트워킹 진행(6월 중)"]},
             {"title": "동반성장 워크숍", "items": ["비주얼 띵킹 기반의 1박 2일 워크숍 진행, 사회서비스 기업가 초청 강연, 네트워킹으로 구성(10월 중)"]},
-            {"title": "성과공유회 (데모데이)", "items": ["수료식, 참여 기업 최종 성과 발표, 사회 서비스 유관 펀드 보유 투자자 1:1 밋업, 유관기관 네트워킹(11월 중)"]}
+            {"title": "성과공유회 (데모데이)", "items": ["<span>수료식, 최종 성과 발표, 사회 서비스 유관 펀드 보유 투자자 1:1 밋업, 유관기관 네트워킹(11월 중)</span>"]}
         ]}
     ]
     
@@ -617,11 +617,6 @@ def display_program_flow_section():
             animation_delay_counter += 1
             
     st.markdown('</div></div>', unsafe_allow_html=True)
-
-   
-
-
-
 # === 섹션 7: 접수 방법 ===
 def display_application_method_text():
     section_style = f"""
