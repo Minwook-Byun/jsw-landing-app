@@ -20,6 +20,7 @@ TEXT_COLOR_HEADINGS = "#1A1B1E" # 사용될 수 있으므로 유지
 HOVER_TEXT_COLOR_WHITE = "#FFFFFF" # 사용될 수 있으므로 유지
 GRADIENT_START_COLOR = "#FFA07A" # 연한 주황
 GRADIENT_END_COLOR = KEY_ORANGE_COLOR # 진한 주황
+APPLICATION_FORM_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1KnYU-_2chw54sMUD7GND2TfD0ZianWfX"
 
 # --- 이미지 Base64 인코딩 함수 ---
 def image_to_data_uri(file_path_str):
@@ -511,7 +512,7 @@ def display_benefits_section():
         @media (max-width: 768px) {{ #benefits-section {{ padding: 60px 20px; }} #benefits-section .benefits-main-title-orange {{ font-size: 1.6em; }} #benefits-section .benefits-subtitle {{ font-size: 1.8em; margin-bottom: 30px; }} #benefits-section .benefits-card {{ padding: 30px 25px; }} #benefits-section .benefits-card li {{ font-size: 1.05em; margin-bottom: 12px; }} }}
         @media (max-width: 576px) {{ #benefits-section .benefits-main-title-orange {{ font-size: 1.5em; }} #benefits-section .benefits-subtitle {{ font-size: 1.6em; }} #benefits-section .benefits-card li {{ font-size: 1.0em; }} }}
     </style>
-    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li> 우수 기업 MYSC 2억 직접투자 및 TIPS/LIPS 검토 </li><li> 팀 파트너의 1:1 심화 교육 진행을 통한 밀착 성장 지원</li><li>소셜링크아카데미 참여를 통한 사회서비스 기업과의 네트워크 형성</li></ul></div></div></div>"""
+    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li> 우수 기업 MYSC 2억 직접투자 검토 </li><li> 팀 파트너의 1:1 심화 교육 진행을 통한 밀착 성장 지원</li><li>소셜링크아카데미 참여를 통한 사회서비스 기업과의 네트워크 형성</li></ul></div></div></div>"""
     st.markdown(section_html, unsafe_allow_html=True)
 
 # === 섹션 5: 프로그램 진행 내용 ===
@@ -570,9 +571,9 @@ def display_program_flow_section():
     
     program_elements = [
         {"group_title": "📚 기본 교육", "activities": [
-            {"title": "스테이지 1: 법률 및 기본 역량 강화", "items": ["사회서비스의 이해: <span class='placeholder-text'>사회 서비스의 의미와 생태계 소개</span>", "인사노무: 채용 및 취업 규칙/표준 근로계약서 기반의 근로계약서 작성 강의 진행", "법률 교육: 투자 핵심 용어, 유형 계약 시 주의사항 등"]},
-            {"title": "스테이지 2: 성장 및 가치 측정", "items": ["AI 기반 임팩트 측정: 사회서비스 기업 대표님으로부터 직접 듣는 정성 지표 수집 및 데이터 자동화 이를 통한 알맞은 파트너십 구축 전략", "AI 인사이트: 글로벌 AI 트렌드와 사회서비스 기업의 향후 AI/DT 전략", "홍보 마케팅: 사회서비스 기업 맞춤형 홍보 및 마케팅 전략"]},
-            {"title": "스테이지 3: 투자 유치 및 금융 설계", "items": ["IR 스토리텔링: <span class='placeholder-text'>스토리 기반의 IR 피치덱 구성과 피칭 전략 강의</span>", "투자 생태계 이해: <span class='placeholder-text'> 국내 AC/VC/PE 등 벤처 투자와 관련된 생태계 전반 강의와 형태에 따른 투자 유치 가이드</span>", "혼합금융: <span class='placeholder-text'>MYSC의 실전적인 사례를 통해 알아보는 TIPS/LIPS/지원금을 통해 자본조달 전략 수립 강의</span>"]}
+            {"title": "스테이지 1: 기본 역량 강화", "items": ["사회서비스의 이해: 사회 서비스의 의미와 생태계 소개","경영진단: MYSC 전문 컨설턴트의 경영진단 및 맞춤형 성장 로드랩 설정",  "인사노무: 채용 및 취업 규칙/표준 근로계약서 기반의 근로계약서 작성 강의 진행", "법률 교육: 투자 핵심 용어, 유형 계약 시 주의사항 등"]},
+            {"title": "스테이지 2: 성장 및 가치 측정", "items": ["AI를 통한 사회적가치 측정: 사회서비스 기업 대표님으로부터 직접 듣는 정성 지표 수집 및 데이터 자동화 이를 통한 알맞은 파트너십 구축 전략", "스타트업 AX전략: 글로벌 AI 트렌드와 사회서비스 기업의 향후 AX 전략", "홍보 마케팅: 사회서비스 기업 맞춤형 홍보 및 마케팅 전략"]},
+            {"title": "스테이지 3: 투자 유치 및 금융 설계", "items": ["IR 스토리텔링: <span class='placeholder-text'>스토리 기반의 IR 피치덱 구성과 피칭 전략 강의</span>", "투자 생태계 이해: <span class='placeholder-text'> 국내 AC/VC/PE 등 벤처 투자와 관련된 생태계 전반 강의와 형태에 따른 투자 유치 가이드</span>", "혼합금융: <span class='placeholder-text'>MYSC의 실전적인 사례를 통해 알아보는 TIPS/LIPS/지원금을 통해 자본조달 전략 수립 강의</span>","Closed IR: <span class='placeholder-text'>소링아 참여팀만을 위한 펀드/유관 펀드 심사역과 기업 간 Closed IR 진행</span>"]}
         ]},
         {"group_title": "👊 심화 교육", "activities": [
             {"title": "팀파트너 매칭", "items": ["<strong>팀 파트너:</strong>공공/민간에서 풍부한 경험을 보유한 MYSC 컨설턴트가 진단 미팅과 격월 기업의 전반적인 현황을 파악하고 성장을 지원하는 멘토링을 진행합니다."]},
@@ -582,7 +583,7 @@ def display_program_flow_section():
         {"group_title": "🤝 네트워킹 및 성과공유", "activities": [
             {"title": "발대식", "items": [" 사회서비스 전문가 강의, 기업 자가진단 작성 및 활용방법, 사회 서비스 분야 선배 기업가 강연, 참여 기업 간 네트워킹 진행(6월 중)"]},
             {"title": "동반성장 워크숍", "items": ["비주얼 띵킹 기반의 1박 2일 워크숍 진행, 사회서비스 기업가 초청 강연, 네트워킹으로 구성(10월 중)"]},
-            {"title": "성과공유회 (데모데이)", "items": ["<p>수료식, 최종 성과 발표, 사회 서비스 유관 펀드 보유 투자자 1:1 밋업, 유관기관 네트워킹(11월 중)</p>"]}
+            {"title": "성과공유회 (데모데이)", "items": ["<span class='placeholder-text'>수료식, 최종 성과 발표, 사회 서비스 유관 펀드 보유 투자자 1:1 밋업, 유관기관 네트워킹(11월 중)</span>"]}
         ]}
     ]
     
@@ -617,33 +618,121 @@ def display_program_flow_section():
             animation_delay_counter += 1
             
     st.markdown('</div></div>', unsafe_allow_html=True)
-# === 섹션 7: 접수 방법 ===
+
+# === 섹션 7: 접수 방법 (버튼 무조건 표시, URL 직접 삽입 버전) ===
 def display_application_method_text():
-    section_style = f"""
+    # 여기에 사용할 고정된 다운로드 URL을 직접 입력합니다.
+    # 이 URL은 더 이상 Python 변수에서 가져오지 않습니다.
+    html_content = f"""
     <style>
-        #application-method-section {{ 
-            padding: 80px 20px; background-color: {BACKGROUND_COLOR_SECTION_WHITE};
+        /* --- 접수 방법 섹션 스타일 --- */
+        #application-method-section-final-hc {{ /* ID를 변경하여 CSS 충돌 방지 */
+            padding: 80px 20px;
+            background-color: {BACKGROUND_COLOR_SECTION_WHITE}; /* Python 변수 */
             font-family: 'Pretendard', sans-serif;
         }}
-        #application-method-section .content-wrapper {{ max-width: 800px; margin: 0 auto; }}
-        #application-method-section .main-title-orange {{ font-size: 1.8em; font-weight: 700; color: {KEY_ORANGE_COLOR}; text-align: center; margin-bottom: 10px; }}
-        #application-method-section .subtitle-emoji {{ font-size: 2.2em; font-weight: 700; color: {TEXT_COLOR_HEADINGS}; text-align: center; margin-bottom: 35px; }}
-        #application-method-section .info-card {{ background-color: {CARD_BACKGROUND_COLOR}; padding: 30px 35px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: left; }}
-        #application-method-section .info-card p {{ font-size: 1.1em; color: {TEXT_COLOR_BODY}; line-height: 1.75; margin-bottom: 18px; }}
-        #application-method-section .info-card p:last-child {{ margin-bottom: 0; }}
-        #application-method-section .info-card strong {{ color: {TEXT_COLOR_BODY_STRONG}; }}
-        #application-method-section .info-card em {{ font-style: normal; color: {TEXT_COLOR_CAPTION}; font-size: 0.95em; display: inline-block; margin-top: 4px;}}
-        #application-method-section .info-card .submission-note {{ color: {TEXT_COLOR_PLACEHOLDER}; font-size: 0.9em; display: block; margin-top: 10px; }}
-         @media (max-width: 768px) {{ #application-method-section .main-title-orange {{ font-size: 1.7em; }} #application-method-section .subtitle-emoji {{ font-size: 2.0em; }} #application-method-section .info-card p {{ font-size: 1.05em; }} }}
-    </style>"""
-    st.markdown(section_style, unsafe_allow_html=True)
-    content_html = f"""
-    <div id="application-method-section"><div class="content-wrapper">
-            <h2 class="main-title-orange">접수 방법</h2><h3 class="subtitle-emoji">🤔 어떻게 지원하면 될까요?</h3>
+        #application-method-section-final-hc .content-wrapper {{
+            max-width: 800px;
+            margin: 0 auto;
+        }}
+        #application-method-section-final-hc .main-title-orange {{
+            font-size: 1.8em;
+            font-weight: 700;
+            color: {KEY_ORANGE_COLOR}; /* Python 변수 */
+            text-align: center;
+            margin-bottom: 10px;
+        }}
+        #application-method-section-final-hc .subtitle-emoji {{
+            font-size: 2.2em;
+            font-weight: 700;
+            color: {TEXT_COLOR_HEADINGS}; /* Python 변수 */
+            text-align: center;
+            margin-bottom: 35px;
+        }}
+        #application-method-section-final-hc .info-card {{
+            background-color: {CARD_BACKGROUND_COLOR}; /* Python 변수 */
+            padding: 30px 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: left;
+        }}
+        #application-method-section-final-hc .info-card p {{
+            font-size: 1.1em;
+            color: {TEXT_COLOR_BODY}; /* Python 변수 */
+            line-height: 1.75;
+            margin-bottom: 18px;
+        }}
+        #application-method-section-final-hc .info-card p:last-child {{
+            margin-bottom: 0;
+        }}
+        #application-method-section-final-hc .info-card strong {{
+            color: {TEXT_COLOR_BODY_STRONG}; /* Python 변수 */
+        }}
+
+        /* --- 다운로드 버튼 스타일 (항상 적용) --- */
+        #application-method-section-final-hc .download-button-container {{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }}
+        #application-method-section-final-hc .download-button {{
+            display: inline-block;
+            background-color: {KEY_ORANGE_COLOR}; /* Python 변수 */
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }}
+        #application-method-section-final-hc .download-button:hover,
+        #application-method-section-final-hc .download-button:focus {{
+            background-color: #E65100; /* 주황색보다 약간 어두운 색 */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            color: white !important;
+            text-decoration: none !important;
+        }}
+        #application-method-section-final-hc .download-button:active {{
+             transform: translateY(0px);
+             box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }}
+
+        /* --- 반응형 스타일 --- */
+        @media (max-width: 768px) {{
+            #application-method-section-final-hc .main-title-orange {{ font-size: 1.7em; }}
+            #application-method-section-final-hc .subtitle-emoji {{ font-size: 2.0em; }}
+            #application-method-section-final-hc .info-card p {{ font-size: 1.05em; }}
+            #application-method-section-final-hc .download-button {{ font-size: 1.05em; padding: 10px 22px; }}
+        }}
+    </style>
+
+    <div id="application-method-section-final-hc">
+        <div class="content-wrapper">
+            <h2 class="main-title-orange">접수 방법</h2>
+            <h3 class="subtitle-emoji">🤔 어떻게 지원하면 될까요?</h3>
             <div class="info-card">
-                <p>- 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>- 해당 링크에서 신청 양식을 다운로드 받아 작성 후, 기타 제출 서류와 함께 업로드해 주십시오.</p>
-            </div></div></div>"""
-    st.markdown(content_html, unsafe_allow_html=True)
+                <p>
+                    - 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>
+                    - 해당 링크에서 신청 양식을 다운로드 받아 작성 후, 기타 제출 서류와 함께 업로드해 주십시오.
+                </p>
+            </div>  
+        </div> 
+            <div>
+                <div class="download-button-container">
+                     <a href="https://drive.google.com/uc?export=download&id=1KnYU-_2chw54sMUD7GND2TfD0ZianWfX" class="download-button" download>📄 신청서 다운로드</a>
+                </div>
+            </div> 
+    """
+    # 위 f-string에서 BACKGROUND_COLOR_SECTION_WHITE, KEY_ORANGE_COLOR 등은
+    # 여전히 Python 전역 변수에서 가져옵니다. 이 부분은 문제가 없다고 가정합니다.
+    # 문제가 되는 부분은 오직 다운로드 URL 삽입 방식이었습니다.
+    st.markdown(html_content, unsafe_allow_html=True)
 
 # === 섹션 8: 문의하기 ===
 def display_contact_info():
