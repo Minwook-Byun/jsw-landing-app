@@ -342,7 +342,7 @@ def display_benefits_section():
         @media (max-width: 768px) {{ #benefits-section {{ padding: 60px 20px; }} #benefits-section .benefits-main-title-orange {{ font-size: 1.6em; }} #benefits-section .benefits-subtitle {{ font-size: 1.8em; margin-bottom: 30px; }} #benefits-section .benefits-card {{ padding: 30px 25px; }} #benefits-section .benefits-card li {{ font-size: 1.05em; margin-bottom: 12px; }} }}
         @media (max-width: 576px) {{ #benefits-section .benefits-main-title-orange {{ font-size: 1.5em; }} #benefits-section .benefits-subtitle {{ font-size: 1.6em; }} #benefits-section .benefits-card li {{ font-size: 1.0em; }} }}
     </style>
-    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li> 우수 기업 MYSC 2억 직접투자 </li><li> 팀 파트너의 1:1 심화 교육 진행을 통한 밀착 성장 지원</li><li>소셜 링크 아카데미 참여를 통한 사회서비스 기업과의 네트워크 형성</li></ul></div></div></div>"""
+    <div id="benefits-section"><div class="content-wrapper"><h2 class="benefits-main-title-orange">지원 혜택</h2><h3 class="benefits-subtitle">✨ 소링아 3기에 참여하면 어떤 혜택이 있나요?</h3><div class="benefits-card"><ul><li> 우수 기업 MYSC 2억 직접투자 검토</li><li> 팀 파트너의 1:1 심화 교육 진행을 통한 밀착 성장 지원</li><li>소셜 링크 아카데미 참여를 통한 사회서비스 기업과의 네트워크 형성</li></ul></div></div></div>"""
     st.markdown(section_html, unsafe_allow_html=True)
 # === 섹션 5: 프로그램 진행 내용 ===
 def display_program_flow_section():
