@@ -201,7 +201,7 @@ def display_post_hero_section():
     program_name = "소셜 링크 아카데미"
     
     # --- 수정된 부분 2.2 ---
-    original_base_text = "는 사회서비스 분야 전문 교육과정입니다. <br> 우수한 기술력과 잠재력을 보유한 사회서비스 기업*을 발굴하고, 사회서비스 이해를 돕고,<br>투자 유치 역량을 강화해 국민의 삶을 HEAL하는 소셜 링커(Social Linker)로의 성장에 함께합니다."
+    original_base_text = "는 사회서비스 분야 전문 교육과정입니다. <br> 우수한 기술력과 잠재력을 보유한 사회서비스 기업*을 발굴하고,<br>투자 유치 역량을 강화해 국민의 삶을 HEAL하는 소셜 링커(Social Linker)로의 성장에 함께합니다."
     # --------------------
     
     target_phrase = "국민의 삶을 HEAL하는 소셜 링커(Social Linker)로의 성장"
