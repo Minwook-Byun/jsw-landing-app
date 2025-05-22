@@ -602,7 +602,7 @@ def display_contact_info():
             <div class="contact-card">
                 <h3>프로그램 운영 사무국 (MYSC)</h3>
                 <p><span class="icon">✉️</span><strong>이메일:</strong> <a href="mailto:{contact_email}">{contact_email}</a></p>
-                <p><span class="icon">📞</span><strong>연락처:</strong> 02-532-1110 </p>
+                <p><span class="icon">📞</span><strong>연락처:</strong> 02-499-5111 </p>
             </div></div></div>"""
     st.markdown(content_html, unsafe_allow_html=True)
     
