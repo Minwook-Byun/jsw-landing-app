@@ -794,7 +794,7 @@ def main():
     display_hero_banner()
     display_post_hero_section() 
     display_who_can_apply_section() 
-    display_key_achievements_section() # 수정된 함수 호출
+    #display_key_achievements_section() # 수정된 함수 호출
     display_benefits_section()     
     display_program_flow_section() 
     
