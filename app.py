@@ -265,84 +265,78 @@ def display_program_flow_section():
             
     st.markdown('</div></div>', unsafe_allow_html=True)
 
-# === 섹션 7: 접수 방법 (평가 기준표 통합) ===
 def display_application_method_text():
     참가신청서개인정보동의서 = "https://drive.google.com/uc?export=download&id=1QqSD09zL0z7Qezav1ISLVzZoVgf_95ep"
     사업계획서 ="https://drive.google.com/uc?export=download&id=19q8D6Fu61etVCvqvVceeV9lkfKnd9lhA"
 
+    # 여기에 모든 색상 및 스타일 관련 변수가 정의되어 있다고 가정합니다.
+    BACKGROUND_COLOR_SECTION_WHITE = "#FFFFFF"
+    KEY_ORANGE_COLOR = "#FFA500"
+    TEXT_COLOR_HEADINGS = "#333333"
+    TEXT_COLOR_BODY = "#555555"
+    TEXT_COLOR_BODY_STRONG = "#000000"
+    CARD_BACKGROUND_COLOR = "#F9F9F9"
+    TABLE_BORDER_COLOR = "#DDDDDD"
+    TABLE_HEADER_BACKGROUND = "#EEEEEE"
+    HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND = "#FFF3E0" # '구분' 셀 배경색
+    HIGHLIGHT_ORANGE_EXTREMELY_LIGHT_BACKGROUND = "#FFF9F0" # '주요 항목' 셀 배경색
+
     html_content = f"""
     <style>
         #application-method-section-final-hc {{ padding: 80px 20px; background-color: {BACKGROUND_COLOR_SECTION_WHITE}; font-family: 'Pretendard', sans-serif; }}
-        #application-method-section-final-hc .content-wrapper {{ max-width: 1200px; margin: 0 auto; }} /* 너비 수정: 800px -> 1200px */
+        #application-method-section-final-hc .content-wrapper {{ max-width: 1200px; margin: 0 auto; }}
         #application-method-section-final-hc .main-title-orange {{ font-size: 1.8em; font-weight: 700; color: {KEY_ORANGE_COLOR}; text-align: center; margin-bottom: 10px; }}
         #application-method-section-final-hc .subtitle-emoji {{ font-size: 2.2em; font-weight: 700; color: {TEXT_COLOR_HEADINGS}; text-align: center; margin-bottom: 35px; }}
         #application-method-section-final-hc .info-card {{ background-color: {CARD_BACKGROUND_COLOR}; padding: 30px 35px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: left; }}
-        #application-method-section-final-hc .info-card p.application-guide {{ font-size: 1.1em; color: {TEXT_COLOR_BODY}; line-height: 1.75; margin-bottom: 30px; }} /* 안내 문구 후 여백 증가 */
+        #application-method-section-final-hc .info-card p.application-guide {{ font-size: 1.1em; color: {TEXT_COLOR_BODY}; line-height: 1.75; margin-bottom: 30px; }}
         #application-method-section-final-hc .info-card strong {{ color: {TEXT_COLOR_BODY_STRONG}; }}
 
-        /* 평가 기준표 스타일 시작 */
         #application-method-section-final-hc .criteria-table-title {{
-            font-size: 1.3em; /* 소제목 크기 */
-            font-weight: 600;
-            color: {TEXT_COLOR_BODY_STRONG};
-            text-align: center;
-            margin-top: 10px; /* 위쪽 문단과의 간격 */
-            margin-bottom: 20px; /* 표와의 간격 */
+            font-size: 1.3em; font-weight: 600; color: {TEXT_COLOR_BODY_STRONG}; text-align: center; margin-top: 10px; margin-bottom: 20px;
         }}
         #application-method-section-final-hc .criteria-table-container {{
-            overflow-x: auto; /* 작은 화면에서 가로 스크롤 */
-            margin-bottom: 30px; /* 다운로드 버튼과의 간격 */
-            border: 1px solid {TABLE_BORDER_COLOR}; /* 컨테이너에 얇은 테두리 추가 */
-            border-radius: 8px; /* 컨테이너 모서리 둥글게 */
+            overflow-x: auto; margin-bottom: 30px; border: 1px solid {TABLE_BORDER_COLOR}; border-radius: 8px;
         }}
         #application-method-section-final-hc .criteria-table {{
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em; /* info-card 내 다른 텍스트와 어울리도록 조정 */
-            color: {TEXT_COLOR_BODY};
+            width: 100%; border-collapse: collapse; font-size: 0.9em; color: {TEXT_COLOR_BODY};
         }}
+        /* 기본 td 정렬은 왼쪽 */
         #application-method-section-final-hc .criteria-table th,
         #application-method-section-final-hc .criteria-table td {{
-            border: 1px solid {TABLE_BORDER_COLOR};
-            padding: 10px; /* 패딩 조정 */
-            text-align: center !important; /* 모든 텍스트 가운데 정렬 강제 */
-            vertical-align: middle;
-            line-height: 1.4; /* 줄간격 조정 */
+            border: 1px solid {TABLE_BORDER_COLOR}; padding: 10px; text-align: left; vertical-align: middle; line-height: 1.4;
         }}
+        /* th (헤더)는 가운데 정렬 */
         #application-method-section-final-hc .criteria-table th {{
-            background-color: {TABLE_HEADER_BACKGROUND}; /* 헤더 배경색 변경 */
-            color: {TEXT_COLOR_BODY_STRONG};
-            font-weight: 600;
+            background-color: {TABLE_HEADER_BACKGROUND}; color: {TEXT_COLOR_BODY_STRONG}; font-weight: 600; text-align: center;
         }}
-        #application-method-section-final-hc .criteria-table .category-header-cell {{
-            font-weight: 500;
-            background-color: {HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND};
-            color: {TEXT_COLOR_BODY_STRONG};
+        /* '구분' (L1) 셀 가운데 정렬 */
+        #application-method-section-final-hc .category-header-cell {{
+            font-weight: 500; background-color: {HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND}; color: {TEXT_COLOR_BODY_STRONG}; text-align: center;
         }}
-        #application-method-section-final-hc .criteria-table .subtotal-row td,
+        /* '주요 항목' (L2) 셀 가운데 정렬 */
+        #application-method-section-final-hc .sub-category-item-cell {{ 
+            font-weight: normal; background-color: {HIGHLIGHT_ORANGE_EXTREMELY_LIGHT_BACKGROUND}; color: {TEXT_COLOR_BODY_STRONG}; text-align: center; vertical-align: middle;
+        }}
+        /* '세부 내용(질문)' (L3) 셀은 왼쪽 정렬 (기본 td 설정과 동일하나 명시적으로 유지) */
+        #application-method-section-final-hc .evaluation-question-cell {{ 
+            text-align: left; vertical-align: middle;
+        }}
         #application-method-section-final-hc .criteria-table .total-row td {{
-            background-color: #f0f0f0; /* 소계/합계 배경색 조정 */
-            font-weight: bold;
-            color: {TEXT_COLOR_BODY_STRONG};
+            background-color: #f0f0f0; font-weight: bold; color: {TEXT_COLOR_BODY_STRONG};
         }}
-        #application-method-section-final-hc .criteria-table .highlight-metric-row {{
-            background-color: {HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND}; /* 매출 행 강조를 다른 강조와 통일 */
+        #application-method-section-final-hc .criteria-table .total-row td:first-child {{ /* 합계 텍스트 */
+             text-align: center;
         }}
-        #application-method-section-final-hc .criteria-table .highlight-metric-row td {{
-            font-weight: 600; /* 강조 행 텍스트 굵게 */
+        #application-method-section-final-hc .criteria-table .total-row td:last-child {{ /* 합계 점수 */
+            text-align: center;
         }}
-        #application-method-section-final-hc .criteria-table .metric-type-qualitative {{ color: #2980b9; }} /* 정성: 파란색 계열 조정 */
-        #application-method-section-final-hc .criteria-table .metric-type-quantitative {{ color: #c0392b; }} /* 정량: 붉은색 계열 조정 */
-        /* 평가 기준표 스타일 끝 */
 
-        #application-method-section-final-hc .download-button-container {{ text-align: center; margin-top: 0px; margin-bottom: 10px; }} /* 평가 기준표 추가로 인해 상단 마진 조정 */
+        #application-method-section-final-hc .download-button-container {{ text-align: center; margin-top: 0px; margin-bottom: 10px; }}
         #application-method-section-final-hc .download-button {{ display: inline-block; background-color: {KEY_ORANGE_COLOR}; color: white !important; padding: 12px 28px; border-radius: 8px; text-decoration: none !important; font-size: 1.1em; font-weight: 600; text-align: center; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; margin: 5px; }}
         #application-method-section-final-hc .download-button:hover, #application-method-section-final-hc .download-button:focus {{ background-color: #E65100; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.2); color: white !important; text-decoration: none !important; }}
         #application-method-section-final-hc .download-button:active {{ transform: translateY(0px); box-shadow: 0 3px 10px rgba(0,0,0,0.12); }}
         
-        @media (max-width: 1200px) {{ /* 반응형 max-width 조정 */
-            #application-method-section-final-hc .content-wrapper {{ max-width: 95%; }}
-        }}
+        @media (max-width: 1200px) {{ #application-method-section-final-hc .content-wrapper {{ max-width: 95%; }} }}
         @media (max-width: 768px) {{
             #application-method-section-final-hc .main-title-orange {{ font-size: 1.7em; }}
             #application-method-section-final-hc .subtitle-emoji {{ font-size: 2.0em; }}
@@ -352,118 +346,103 @@ def display_application_method_text():
             #application-method-section-final-hc .criteria-table td {{ padding: 8px; font-size: 0.85em; }}
             #application-method-section-final-hc .download-button {{ font-size: 1.05em; padding: 10px 22px; }}
         }}
-            @media (max-width: 576px) {{
+        @media (max-width: 576px) {{
             #application-method-section-final-hc .criteria-table th,
             #application-method-section-final-hc .criteria-table td {{ font-size: 0.8em; }}
         }}
     </style>
     <div id="application-method-section-final-hc">
         <div class="content-wrapper">
-            <h2 class="main-title-orange">접수 방법 및 평가 기준</h2> <h3 class="subtitle-emoji">🤔 지원과 평가는 어떻게 진행되나요?</h3> <div class="info-card">
+            <h2 class="main-title-orange">접수 방법 및 평가 기준</h2> <h3 class="subtitle-emoji">🤔 지원과 평가는 어떻게 진행되나요?</h3>
+            <div class="info-card">
                 <p class="application-guide">
                     - 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>
                     - 해당 링크에서 <strong>(1)신청서 및 개인정보 동의서와 (2)사업계획서를 모두 다운로드 받아 작성 후</strong>, 구글폼 내의 제출 서류와 함께 업로드해 주십시오.<br>
                     - 구글 폼에 접수 주시는 사업계획서는 서면 심사 단계까지만 활용됩니다. <br>
-                    - 발표 자료의 경우 서면 심사 결과를 안내드리며, <strong>서면 심사 합격 기업 분들께 7/8(화) 16:00까지 발표자료를 요청드릴 예정</strong>입니다                    
+                    - 발표 자료의 경우 서면 심사 결과를 안내드리며, <strong>서면 심사 합격 기업 분들께 7/8(화) 16:00까지 발표자료를 요청드릴 예정</strong>입니다
                 </p>
                 <div>
-                <h4 class="criteria-table-title">평가 기준표</h4>
-                <div class="criteria-table-container">
-                    <table class="criteria-table">
-                        <thead>
-                            <tr>
-                                <th style="width:18%;">구분</th>
-                                <th style="width:37%;">평가항목</th>
-                                <th style="width:10%;">배점</th>
-                                <th style="width:17.5%;">서면</th>
-                                <th style="width:17.5%;">대면</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="3" class="category-header-cell">사회서비스<br>고도화 적합성<br>(30)</td>
-                                <td>사회서비스 지불 의향률 높은 분야 적합성</td>
-                                <td>15</td>
-                                <td class="metric-type-qualitative">정성</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr>
-                                <td>사회서비스 이용 의향 높은 분야 적합성</td>
-                                <td>15</td>
-                                <td class="metric-type-qualitative">정성</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr class="subtotal-row">
-                                <td colspan="1"><strong>소계</strong></td>
-                                <td><strong>30</strong></td>
-                                <td colspan="2"></td>
-                            </tr>
-                            <tr>
-                                <td rowspan="3" class="category-header-cell">조직역량<br>(30)</td>
-                                <td>핵심역량(산업재산권 등)</td>
-                                <td>15</td>
-                                <td class="metric-type-quantitative">정량</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr>
-                                <td>대표 및 경영진 전문성(유사사업수행, 수상 등)</td>
-                                <td>15</td>
-                                <td class="metric-type-quantitative">정량</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr class="subtotal-row">
-                                <td colspan="1"><strong>소계</strong></td>
-                                <td><strong>30</strong></td>
-                                <td colspan="2"></td>
-                            </tr>
-                            <tr>
-                                <td rowspan="5" class="category-header-cell">성장 잠재성<br>(40)</td>
-                                <td>사업목표 및 계획 실현가능성</td>
-                                <td>10</td>
-                                <td class="metric-type-qualitative">정성</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr>
-                                <td>사업모델 경쟁력(차별성, 확장성 등)</td>
-                                <td>10</td>
-                                <td class="metric-type-qualitative">정성</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr class="subtotal-row">
-                                <td><strong>매출</strong></td>
-                                <td><strong>10</strong></td>
-                                <td class="metric-type-quantitative"><strong>정량</strong></td>
-                                <td class="metric-type-qualitative"><strong>정성</strong></td>
-                            </tr>
-                            <tr>
-                                <td>시장성(타깃, 예상매출, 손익 등)</td>
-                                <td>10</td>
-                                <td class="metric-type-qualitative">정성</td>
-                                <td class="metric-type-qualitative">정성</td>
-                            </tr>
-                            <tr class="subtotal-row">
-                                <td colspan="1"><strong>소계</strong></td>
-                                <td><strong>40</strong></td>
-                                <td colspan="2"></td>
-                            </tr>
-                        </tbody>
-                        <tfoot class="total-row">
-                            <tr>
-                                <td colspan="2"><strong>합계</strong></td>
-                                <td><strong>100</strong></td>
-                                <td colspan="2"></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <div class="download-button-container">
-                    <a href="{참가신청서개인정보동의서}" class="download-button" download>📄 신청서 및 개인정보 동의서 다운로드</a>
-                    <a href="{사업계획서}" class="download-button" download>📄 사업계획서 다운로드</a>
+                    <h4 class="criteria-table-title">평가 기준표</h4>
+                    <div class="criteria-table-container">
+                        <table class="criteria-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:25%;">평가 기준</th>
+                                    <th style="width:30%;">평가 항목</th>
+                                    <th style="width:45%;">평가 질문(점수)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="4" class="category-header-cell">창업 동기 및 역량<br>(20점)</td>
+                                    <td rowspan="2" class="sub-category-item-cell">창업 동기 및 필요성<br>(10점)</td>
+                                    <td class="evaluation-question-cell">기업이 해결하고자 하는 사회문제가 구체적으로 제시되고 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td class="evaluation-question-cell">기업의 사업모델을 통해 사회문제를 해결할 수 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="sub-category-item-cell">보유 역량<br>(10점)</td>
+                                    <td class="evaluation-question-cell">대표와 의사결정그룹이 뚜렷한 임팩트 기업가 정신을 가지고 사업을 추진하고 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td class="evaluation-question-cell">사업실행을 위한 핵심 기술을 책임지고 이끌 수 있는 인력(팀)이 구성되어 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="category-header-cell">창업 아이템 개요 및 차별성<br>(20점)</td>
+                                    <td class="sub-category-item-cell">창업 아이템 개요<br>(10점)</td>
+                                    <td class="evaluation-question-cell">핵심 고객에 대한 정의와 고객/거래처 확보가 되어 있는가? (10점)</td>
+                                </tr>
+                                <tr>
+                                    <td class="sub-category-item-cell">창업 아이템 차별성<br>(10점)</td>
+                                    <td class="evaluation-question-cell">기업의 사업모델(아이템)이 경쟁사 대비 차별적이고 독창적인가? (10점)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3" class="category-header-cell">창업 아이템 시장성<br>(30점)</td>
+                                    <td class="sub-category-item-cell">창업 아이템의 국내·외 시장성<br>(5점)</td>
+                                    <td class="evaluation-question-cell">시장의 니즈를 파악하고 그에 대한 전략이 세워져 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="sub-category-item-cell">국내·외 시장진입 전략<br>(25점)</td>
+                                    <td class="evaluation-question-cell">비즈니스의 양적 확장과 질적 성장에 대한 타당한 계획이 있는가? (15점)</td>
+                                </tr>
+                                <tr>
+                                    <td class="evaluation-question-cell">기업이 제품, 서비스 홍보를 위한 영업 및 마케팅 전략이 있는가? (10점)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="category-header-cell">고용 및 자금조달 계획<br>(20점)</td>
+                                    <td class="sub-category-item-cell">고용 계획<br>(5점)</td>
+                                    <td class="evaluation-question-cell">신규인력 고용을 통해 팀의 역량을 강화하는데 계획을 가지고 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td class="sub-category-item-cell">투자 및 자금조달 계획<br>(15점)</td>
+                                    <td class="evaluation-question-cell">향후 투자유치 가능성 등 지속가능한 수익창출을 위한 기반이 존재하는가? (15점)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="category-header-cell">사회서비스 적합성<br>(10점)</td>
+                                    <td rowspan="2" class="sub-category-item-cell">임팩트<br>(10점)</td>
+                                    <td class="evaluation-question-cell">사회문제를 해결했을 때 발생되는 사회환경적 임팩트를 설명할 수 있는가? (5점)</td>
+                                </tr>
+                                <tr>
+                                    <td class="evaluation-question-cell">사회서비스 분야의 문제를 해결할 수 있는 산업이며, 그것이 사회에 꼭 필요한가? (5점)</td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="total-row">
+                                <tr>
+                                    <td colspan="2"><strong>합계</strong></td>
+                                    <td><strong>100점</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="download-button-container">
+                        <a href="{참가신청서개인정보동의서}" class="download-button" download>📄 신청서 및 개인정보 동의서 다운로드</a>
+                        <a href="{사업계획서}" class="download-button" download>📄 사업계획서 다운로드</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     """
     st.markdown(html_content, unsafe_allow_html=True)
 
