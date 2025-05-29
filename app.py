@@ -267,7 +267,7 @@ def display_program_flow_section():
 
 def display_application_method_text():
     참가신청서개인정보동의서 = "https://drive.google.com/uc?export=download&id=1Rf2YMEwUTzgiVTqTzlHJzhzcIduK9Xix"
-    사업계획서 ="https://drive.google.com/uc?export=download&id=19q8D6Fu61etVCvqvVceeV9lkfKnd9lhA"
+    사업계획서 ="https://drive.google.com/uc?export=download&id=1JWATxbrHLgDre5EOPtH-vGOuBPGbpwG9"
 
     # 여기에 모든 색상 및 스타일 관련 변수가 정의되어 있다고 가정합니다.
     BACKGROUND_COLOR_SECTION_WHITE = "#FFFFFF"
