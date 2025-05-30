@@ -1,8 +1,10 @@
 import streamlit as st
-# import pandas as pd # 현재 사용 안 함
-# from datetime import datetime # 현재 사용 안 함
 import base64
 from pathlib import Path
+import sqlite3 # SQLite 사용
+import json    # 상세 정보 저장을 위해
+from datetime import datetime # 타임스탬프 기록을 위해 (선택적, DB에서 자동 생성 가능)
+from streamlit.components.v1 import html as st_html # 이름 충돌 방지 및 JS 실행
 
 # --- 페이지 설정 ---
 st.set_page_config(
@@ -70,6 +72,25 @@ def inject_custom_elements(google_form_url_param):
 
     section_ids_for_scroll_margin = [item["id_target"] for item in nav_items_data] + ["post-hero-section", "hero-banner"]
     scroll_margin_selectors = ", ".join([f"#{id_name}" for id_name in section_ids_for_scroll_margin if id_name])
+
+
+ # --- Google Tag Manager 스니펫 ---
+    gtm_id = "GTM-TDMCLFXB"  # 이미지에서 확인된 GTM ID
+
+    gtm_head_script = f"""
+    <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
+    new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    }})(window,document,'script','dataLayer','{gtm_id}');</script>
+    """
+
+    gtm_body_noscript = f"""
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={gtm_id}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    """
+    # --- Google Tag Manager 스니펫 끝 ---
+
 
     custom_elements_html = f"""
     <style>
@@ -358,7 +379,7 @@ def display_application_method_text():
                 <p class="application-guide">
                     - 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>
                     - 해당 링크에서 <strong>(1)참가신청서 및 개인정보 동의서</strong>와 <strong>(2)사업계획서</strong>를 모두 다운로드 받아 작성 후, 그 외 제출 서류와 함께 구글폼에 업로드해 주십시오..<br>
-                    - <Strong>서면 심사 합격자는 대면 심사 진행을 위한 발표 자료(IR 발표자료 등)를 제출</Strong>해주셔야 하며, 서면 심사 합격 여부와 함께 별도 안내 될 예정입니다. <Strong>(※ 제출기한: 7월 8일 16:00)</Strong>
+                    - <Strong>서면 심사 합격자는 대면 심사 진행을 위한 발표 자료(IR 발표자료 등)를 제출</Strong>해주셔야 하며, 서면 심사 합격 여부와 함께 별도 안내 될 예정입니다. <br> <Strong>(※ 제출기한: 7월 8일 16:00)</Strong>
                 </p>
                 <div>
                     <h4 class="criteria-table-title">평가 기준표</h4>
