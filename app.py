@@ -357,8 +357,8 @@ def display_application_method_text():
             <div class="info-card">
                 <p class="application-guide">
                     - 화면 하단의 <strong>'📝 지원하기'</strong> 버튼을 클릭하여 온라인 설문 링크에 접속합니다.<br>
-                    - 해당 링크에서 <strong>(1)신청서 및 개인정보 동의서와 (2)사업계획서를 모두 다운로드 받아 작성 후</strong>, 구글폼 내의 제출 서류와 함께 업로드해 주십시오.<br>
-                    - 발표 자료의 경우 서면 심사 결과를 안내드리며, <strong>서면 심사 합격 기업 분들께 7/8(화) 16:00까지 발표자료를 요청드릴 예정</strong>입니다
+                    - 해당 링크에서 <strong>(1)참가신청서 및 개인정보 동의서</strong>와 <strong>(2)사업계획서</strong>를 모두 다운로드 받아 작성 후, 그 외 제출 서류와 함께 구글폼에 업로드해 주십시오..<br>
+                    - <Strong>서면 심사 합격자는 대면 심사 진행을 위한 발표 자료(IR 발표자료 등)를 제출</Strong>해주셔야 하며, 서면 심사 합격 여부와 함께 별도 안내 될 예정입니다. <Strong>(※ 제출기한: 7월 8일 16:00)</Strong>
                 </p>
                 <div>
                     <h4 class="criteria-table-title">평가 기준표</h4>
