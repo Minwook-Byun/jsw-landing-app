@@ -7,10 +7,6 @@ from datetime import datetime # 타임스탬프 기록을 위해 (선택적, DB�
 from streamlit.components.v1 import html as st_html # 이름 충돌 방지 및 JS 실행
 
 
-
-
-
-
 # --- 페이지 설정 ---
 st.set_page_config(
     page_title="사회서비스 투자역량 강화 아카데미 소링아 3기",
@@ -18,7 +14,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
-
 
 
 KEY_ORANGE_COLOR = "#FF7043"
@@ -58,25 +53,6 @@ HEADER_NAV_TEXT_COLOR = "#4A4A4A"
 HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND = "#FFF3E0" # 연한 주황색 (KEY_ORANGE_COLOR의 밝은 버전)
 TABLE_HEADER_BACKGROUND = "#FAFAFA" # 테이블 헤더 배경색 (연한 회색)
 TABLE_BORDER_COLOR = "#E0E0E0" # 테이블 테두리 색상
-
-
-    # Google Analytics Gtag
-gtag_js = """
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3M5RSCCZQN');
-    </script>
-    """
-
-    # Streamlit 앱의 <head> 태그 내에 삽입 (더 일반적인 방법)
-st.components.v1.html(gtag_js, height=0) # height=0으로 설정하여 UI에 영향을 주지 않도록 합니다.
-
-
-
 
 # === 섹션 0: 고정 헤더 및 FAB (헤더 메뉴 및 앵커 스크롤 수정) ===
 def inject_custom_elements(google_form_url_param):
@@ -545,6 +521,18 @@ def display_key_achievements_section(): # 현재 호출되지 않음
 # === Streamlit 앱 메인 실행 로직 (호출 순서) ===
 # ===============================================
 def main():
+
+    GA_TAG_HTML = """
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3M5RSCCZQN');
+    </script>
+    """
+    st_html(GA_TAG_HTML, height=0)
     inject_custom_elements(GOOGLE_FORM_URL)
     display_hero_banner()
     display_post_hero_section()
