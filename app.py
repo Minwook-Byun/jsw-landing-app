@@ -6,6 +6,11 @@ import json    # 상세 정보 저장을 위해
 from datetime import datetime # 타임스탬프 기록을 위해 (선택적, DB에서 자동 생성 가능)
 from streamlit.components.v1 import html as st_html # 이름 충돌 방지 및 JS 실행
 
+
+
+
+
+
 # --- 페이지 설정 ---
 st.set_page_config(
     page_title="사회서비스 투자역량 강화 아카데미 소링아 3기",
@@ -13,6 +18,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
+
+
 
 KEY_ORANGE_COLOR = "#FF7043"
 TEXT_COLOR_BODY_STRONG = "#2c3e50"
@@ -52,6 +59,34 @@ HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND = "#FFF3E0" # 연한 주황색 (KEY_ORANG
 TABLE_HEADER_BACKGROUND = "#FAFAFA" # 테이블 헤더 배경색 (연한 회색)
 TABLE_BORDER_COLOR = "#E0E0E0" # 테이블 테두리 색상
 
+
+    # Google Analytics Gtag
+gtag_js = """
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3M5RSCCZQN');
+    </script>
+    """
+
+    # Streamlit 앱의 <head> 태그 내에 삽입 (더 일반적인 방법)
+st.components.v1.html(gtag_js, height=0) # height=0으로 설정하여 UI에 영향을 주지 않도록 합니다.
+
+    # 또는 st.markdown을 사용할 수도 있습니다 (덜 권장됨)
+    # st.markdown(gtag_js, unsafe_allow_html=True)
+
+st.title("내 Streamlit 앱")
+st.write("Google Analytics가 적용된 Streamlit 앱입니다! 📊")
+
+    # 여기에 앱의 나머지 코드를 추가하세요.
+
+
+
+
+
 # === 섹션 0: 고정 헤더 및 FAB (헤더 메뉴 및 앵커 스크롤 수정) ===
 def inject_custom_elements(google_form_url_param):
     logo_bogun_filename = "bogun.jpg"
@@ -74,28 +109,6 @@ def inject_custom_elements(google_form_url_param):
     scroll_margin_selectors = ", ".join([f"#{id_name}" for id_name in section_ids_for_scroll_margin if id_name])
 
 
-    # Google Analytics Gtag
-    gtag_js = """
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3M5RSCCZQN');
-    </script>
-    """
-
-    # Streamlit 앱의 <head> 태그 내에 삽입 (더 일반적인 방법)
-    st.components.v1.html(gtag_js, height=0) # height=0으로 설정하여 UI에 영향을 주지 않도록 합니다.
-
-    # 또는 st.markdown을 사용할 수도 있습니다 (덜 권장됨)
-    # st.markdown(gtag_js, unsafe_allow_html=True)
-
-    st.title("내 Streamlit 앱")
-    st.write("Google Analytics가 적용된 Streamlit 앱입니다! 📊")
-
-    # 여기에 앱의 나머지 코드를 추가하세요.
 
 
     custom_elements_html = f"""
