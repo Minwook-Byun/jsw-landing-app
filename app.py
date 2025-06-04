@@ -15,7 +15,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-
 KEY_ORANGE_COLOR = "#FF7043"
 TEXT_COLOR_BODY_STRONG = "#2c3e50"
 TEXT_COLOR_CAPTION = "#555555"
@@ -25,6 +24,22 @@ HOVER_TEXT_COLOR_WHITE = "#FFFFFF"
 GRADIENT_START_COLOR = "#FFA07A"
 GRADIENT_END_COLOR = KEY_ORANGE_COLOR
 # APPLICATION_FORM_DOWNLOAD_URL은 display_application_method_text 함수 내부에서 직접 사용되도록 수정됨
+
+matomo_tracking_code = """
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://sociallink3streamlitapp.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/sociallink3streamlitapp.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+"""
 
 # --- 이미지 Base64 인코딩 함수 ---
 def image_to_data_uri(file_path_str):
