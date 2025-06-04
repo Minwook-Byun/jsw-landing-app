@@ -74,22 +74,28 @@ def inject_custom_elements(google_form_url_param):
     scroll_margin_selectors = ", ".join([f"#{id_name}" for id_name in section_ids_for_scroll_margin if id_name])
 
 
- # --- Google Tag Manager 스니펫 ---
-    gtm_id = "GTM-TDMCLFXB"  # 이미지에서 확인된 GTM ID
+    # Google Analytics Gtag
+    gtag_js = """
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    gtm_head_script = f"""
-    <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
-    new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    }})(window,document,'script','dataLayer','{gtm_id}');</script>
+    gtag('config', 'G-3M5RSCCZQN');
+    </script>
     """
 
-    gtm_body_noscript = f"""
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={gtm_id}"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    """
-    # --- Google Tag Manager 스니펫 끝 ---
+    # Streamlit 앱의 <head> 태그 내에 삽입 (더 일반적인 방법)
+    st.components.v1.html(gtag_js, height=0) # height=0으로 설정하여 UI에 영향을 주지 않도록 합니다.
+
+    # 또는 st.markdown을 사용할 수도 있습니다 (덜 권장됨)
+    # st.markdown(gtag_js, unsafe_allow_html=True)
+
+    st.title("내 Streamlit 앱")
+    st.write("Google Analytics가 적용된 Streamlit 앱입니다! 📊")
+
+    # 여기에 앱의 나머지 코드를 추가하세요.
 
 
     custom_elements_html = f"""
