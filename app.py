@@ -75,15 +75,6 @@ gtag_js = """
     # Streamlit 앱의 <head> 태그 내에 삽입 (더 일반적인 방법)
 st.components.v1.html(gtag_js, height=0) # height=0으로 설정하여 UI에 영향을 주지 않도록 합니다.
 
-    # 또는 st.markdown을 사용할 수도 있습니다 (덜 권장됨)
-    # st.markdown(gtag_js, unsafe_allow_html=True)
-
-st.title("내 Streamlit 앱")
-st.write("Google Analytics가 적용된 Streamlit 앱입니다! 📊")
-
-    # 여기에 앱의 나머지 코드를 추가하세요.
-
-
 
 
 
