@@ -25,21 +25,6 @@ GRADIENT_START_COLOR = "#FFA07A"
 GRADIENT_END_COLOR = KEY_ORANGE_COLOR
 # APPLICATION_FORM_DOWNLOAD_URL은 display_application_method_text 함수 내부에서 직접 사용되도록 수정됨
 
-matomo_tracking_code = """
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://sociallink3streamlitapp.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='https://cdn.matomo.cloud/sociallink3streamlitapp.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-"""
 
 # --- 이미지 Base64 인코딩 함수 ---
 def image_to_data_uri(file_path_str):
@@ -537,17 +522,18 @@ def display_key_achievements_section(): # 현재 호출되지 않음
 # ===============================================
 def main():
 
+    # 기존 GA 태그 HTML에 새로운 GA ID ('G-WQVYMJ3PR5')에 대한 config 추가
     GA_TAG_HTML = """
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5RSCCZQN"></script> 
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'G-3M5RSCCZQN');
+      gtag('config', 'G-WQVYMJ3PR5'); // ✨ 새로운 GA ID ('G-WQVYMJ3PR5') 설정 추가 ✨
     </script>
     """
-    st_html(GA_TAG_HTML, height=0)
+    st_html(GA_TAG_HTML, height=0) # GA 태그 삽입
     inject_custom_elements(GOOGLE_FORM_URL)
     display_hero_banner()
     display_post_hero_section()
