@@ -55,28 +55,34 @@ TABLE_HEADER_BACKGROUND = "#FAFAFA" # 테이블 헤더 배경색 (연한 회색)
 TABLE_BORDER_COLOR = "#E0E0E0" # 테이블 테두리 색상
 
 # === 섹션 0: 고정 헤더 및 FAB (헤더 메뉴 및 앵커 스크롤 수정) ===
+# === 섹션 0: 고정 헤더 및 FAB (헤더 메뉴 및 앵커 스크롤 수정) ===
 def inject_custom_elements(google_form_url_param):
+    # --- 로고 파일 이름 설정 ---
     logo_bogun_filename = "bogun.jpg"
+    logo3_filename = "logo3.png"  # ✨ 1. 새로운 로고 파일 추가
     logo_mysc_filename = "[MYSC]로고_placeholder.png"
+
+    # --- 로고 이미지 데이터 URI 생성 ---
     logo_bogun_data_uri = image_to_data_uri(logo_bogun_filename)
+    logo3_data_uri = image_to_data_uri(logo3_filename) # ✨ 2. 새로운 로고 데이터 URI 생성
     logo_mysc_data_uri = image_to_data_uri(logo_mysc_filename)
+
+    # --- 로고 HTML 태그 생성 ---
     logo_bogun_html = f'<img src="{logo_bogun_data_uri}" alt="보건복지부 로고" class="header-logo logo-bogun">' if logo_bogun_data_uri else '<span class="logo-placeholder">보건복지부</span>'
+    logo3_html = f'<img src="{logo3_data_uri}" alt="logo3" class="header-logo logo-middle">' if logo3_data_uri else '<span class="logo-placeholder">Logo 3</span>' # ✨ 3. 새로운 로고 HTML 생성
     logo_mysc_html = f'<img src="{logo_mysc_data_uri}" alt="MYSC 로고" class="header-logo logo-mysc">' if logo_mysc_data_uri else '<span class="logo-placeholder">MYSC</span>'
     
     nav_items_data = [
         {"label": "지원 대상", "id_target": "who-can-apply-section"},
         {"label": "지원 혜택", "id_target": "benefits-section"},
         {"label": "프로그램", "id_target": "section-program"},
-        {"label": "접수 방법", "id_target": "application-method-section-final-hc"}, # 평가 기준이 이 섹션으로 통합됨
+        {"label": "접수 방법", "id_target": "application-method-section-final-hc"},
         {"label": "문의하기", "id_target": "contact-info-section"}
     ]
     nav_html_elements = "".join([f'<a href="#{item["id_target"]}" class="header-nav-item">{item["label"]}</a>' for item in nav_items_data])
 
     section_ids_for_scroll_margin = [item["id_target"] for item in nav_items_data] + ["post-hero-section", "hero-banner"]
     scroll_margin_selectors = ", ".join([f"#{id_name}" for id_name in section_ids_for_scroll_margin if id_name])
-
-
-
 
     custom_elements_html = f"""
     <style>
@@ -88,7 +94,7 @@ def inject_custom_elements(google_form_url_param):
         .header-content {{ display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1160px; height: 100%; }}
         .header-logo-group {{ display: flex; align-items: center; }}
         .header-logo {{ height: 36px; object-fit: contain; display: block; }}
-        .logo-mysc {{ margin-left: 15px; }}
+        .logo-middle, .logo-mysc {{ margin-left: 15px; }} /* ✨ 4. 로고 간격 조정을 위한 CSS 수정 */
         .logo-placeholder {{ font-weight: bold; color: #333; }}
         .header-nav {{ display: flex; align-items: center; }}
         .header-nav-item {{ text-decoration: none; color: {HEADER_NAV_TEXT_COLOR}; font-size: 15px; font-weight: 500; padding: 8px 14px; margin-left: 10px; border-radius: 6px; transition: color 0.2s ease, background-color 0.2s ease; }}
@@ -99,7 +105,11 @@ def inject_custom_elements(google_form_url_param):
         .fab:hover {{ background-color: #7CB342; transform: translateX(-50%) translateY(-2px); box-shadow: 0 7px 18px rgba(0,0,0,0.22); }}
         div[data-testid="stAppViewContainer"] > section.main {{ padding-top: {HEADER_HEIGHT_PX + 10}px !important; }}
     </style>
-    <div class="fixed-header"> <div class="header-content"> <div class="header-logo-group">{logo_bogun_html}{logo_mysc_html}</div> <nav class="header-nav">{nav_html_elements}</nav> </div> </div>
+    <div class="fixed-header">
+        <div class="header-content">
+            <div class="header-logo-group">{logo_bogun_html}{logo3_html}{logo_mysc_html}</div> <nav class="header-nav">{nav_html_elements}</nav>
+        </div>
+    </div>
     <a href="{google_form_url_param}" target="_blank" class="fab">📝 지원하기</a>"""
     st.markdown(custom_elements_html, unsafe_allow_html=True)
 
