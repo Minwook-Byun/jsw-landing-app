@@ -6,7 +6,6 @@ import json    # 상세 정보 저장을 위해
 from datetime import datetime # 타임스탬프 기록을 위해 (선택적, DB에서 자동 생성 가능)
 from streamlit.components.v1 import html as st_html # 이름 충돌 방지 및 JS 실행
 
-
 # --- 페이지 설정 ---
 st.set_page_config(
     page_title="사회서비스 투자역량 강화 아카데미 소링아 3기",
@@ -54,7 +53,6 @@ HIGHLIGHT_ORANGE_VERY_LIGHT_BACKGROUND = "#FFF3E0" # 연한 주황색 (KEY_ORANG
 TABLE_HEADER_BACKGROUND = "#FAFAFA" # 테이블 헤더 배경색 (연한 회색)
 TABLE_BORDER_COLOR = "#E0E0E0" # 테이블 테두리 색상
 
-# === 섹션 0: 고정 헤더 및 FAB (헤더 메뉴 및 앵커 스크롤 수정) ===
 # === 섹션 0: 고정 헤더 및 FAB (헤더 메뉴 및 앵커 스크롤 수정) ===
 def inject_custom_elements(google_form_url_param):
     # --- 로고 파일 이름 설정 ---
